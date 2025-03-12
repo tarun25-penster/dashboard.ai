@@ -1,9 +1,13 @@
-
 import { Header } from "@/components/layout/header";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { ProfileDropdown } from "@/components/profile-dropdown";
 
-export default function PageLayout({title, children}) {
+interface PageLayoutProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+export default function PageLayout({ title, children }: PageLayoutProps) {
   return (
     <>
       <Header fixed>
@@ -14,7 +18,9 @@ export default function PageLayout({title, children}) {
       </Header>
       <div className="p-6 mt-16">
         <h1 className="text-2xl font-bold mb-4">{title}</h1>
-        <div className="bg-white p-4 rounded-lg shadow-md">{children}</div>
+        <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md">
+          {children}
+        </div>
       </div>
     </>
   );

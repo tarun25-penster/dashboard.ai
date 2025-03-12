@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // Sample carousel data with images
@@ -23,9 +23,17 @@ const LinkedInCarousel = () => {
     );
   };
 
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") goToPrevious();
+      if (event.key === "ArrowRight") goToNext();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
   return (
-    <div
-      className="relative w-full max-w-2xl mx-auto rounded-md overflow-hidden"
+    <div className="relative w-full max-w-2xl mx-auto rounded-md overflow-hidden"
       style={{
         backgroundImage: `url('/images/background.avif')`,
         backgroundSize: "cover",
@@ -33,19 +41,19 @@ const LinkedInCarousel = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Main carousel slide */}
       <div className="relative h-[400px] w-full flex items-center justify-center">
         <img
           src={carouselItems[currentIndex].image}
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
 
-      {/* Navigation arrows */}
       <button
         className="absolute left-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-70 text-white rounded-full flex items-center justify-center"
         onClick={goToPrevious}
+        aria-label="Previous slide"
       >
         <ChevronLeft className="w-5 h-5" />
       </button>
@@ -53,11 +61,11 @@ const LinkedInCarousel = () => {
       <button
         className="absolute right-2 top-1/2 transform -translate-y-1/2 w-8 h-8 bg-black bg-opacity-70 text-white rounded-full flex items-center justify-center"
         onClick={goToNext}
+        aria-label="Next slide"
       >
         <ChevronRight className="w-5 h-5" />
       </button>
 
-      {/* Bottom progress bar and controls */}
       <div className="bg-gray-800 text-white p-2 flex items-center justify-between">
         <div className="text-xs">
           {currentIndex + 1} / {carouselItems.length}
