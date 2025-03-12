@@ -44,14 +44,14 @@ const LinkedInCarousel = () => {
 
       {/* Navigation arrows */}
       <button
-        className='absolute left-2 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full bg-black bg-opacity-70 text-white'
+        className='bg-opacity-70 absolute top-1/2 left-2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full bg-black text-white'
         onClick={goToPrevious}
       >
         <ChevronLeft className='h-5 w-5' />
       </button>
 
       <button
-        className='absolute right-2 top-1/2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full bg-black bg-opacity-70 text-white'
+        className='bg-opacity-70 absolute top-1/2 right-2 flex h-8 w-8 -translate-y-1/2 transform items-center justify-center rounded-full bg-black text-white'
         onClick={goToNext}
       >
         <ChevronRight className='h-5 w-5' />

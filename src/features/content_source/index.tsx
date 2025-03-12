@@ -122,7 +122,7 @@ export default function ContentSource() {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant='ghost'
-                  className='absolute right-2 top-2'
+                  className='absolute top-2 right-2'
                   onClick={(e) => e.stopPropagation()}
                 >
                   <MoreVertical size={20} />
