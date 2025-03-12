@@ -4,5 +4,3 @@ import RefereceData from '@/features/referencedata'
 export const Route = createLazyFileRoute('/_authenticated/referencedata/')({
   component: RefereceData,
 })
-
-
