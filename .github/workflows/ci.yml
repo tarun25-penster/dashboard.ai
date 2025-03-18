@@ -34,8 +34,18 @@ jobs:
       - name: Analyze unused files and dependencies
         run: pnpm knip
 
-      - name: Run Prettier check
-        run: pnpm format:check
+      - name: Run Prettier check and fix
+        run: |
+          pnpm format:check || pnpm format:write
+
+      - name: Commit and push Prettier fixes
+        if: success()
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Fix code style issues with Prettier" || echo "No changes to commit"
+          git push origin HEAD
 
       - name: Build the project
         run: pnpm build
