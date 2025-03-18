@@ -27,7 +27,7 @@ import { ThemeSwitch } from '@/components/theme-switch'
 interface DataSource {
   id: number
   name: string
-  description: string
+ description: string;
 }
 
 const initialDataSources: DataSource[] = [
