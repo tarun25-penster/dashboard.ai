@@ -62,13 +62,11 @@ export default function APIPage() {
     setApiSource((prev) => ({
       ...prev,
       [key]: {
-        ...(prev[key] && typeof prev[key] === "object" ? prev[key] : {}), 
+        ...(prev[key] && typeof prev[key] === 'object' ? prev[key] : {}),
         [field]: value,
       },
-    }));
-  };
-  
-  
+    }))
+  }
 
   const handleSave = () => {
     if (

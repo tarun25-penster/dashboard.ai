@@ -34,7 +34,7 @@ interface SourceData {
   sourceType: SourceType
   config: Config
   secrets: Secrets
-  description : string;
+  description: string
 }
 
 const initialSource: SourceData = {
@@ -43,7 +43,7 @@ const initialSource: SourceData = {
   config: {},
   secrets: {},
   SourceType: undefined,
-  description: ''
+  description: '',
 }
 
 export default function ContentSourceForm({
