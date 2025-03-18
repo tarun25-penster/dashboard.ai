@@ -16,7 +16,7 @@ import {
   IconUserCog,
   IconUsers,
 } from '@tabler/icons-react'
-import { Command} from 'lucide-react'
+import { Command } from 'lucide-react'
 import { type SidebarData } from '../types'
 
 export const sidebarData: SidebarData = {
@@ -61,30 +61,29 @@ export const sidebarData: SidebarData = {
           title: 'Integrations',
           url: '/integration',
           icon: IconArrowCapsule,
-
         },
         {
           title: 'Referncedata',
           url: '/referencedata',
           icon: IconDatabase,
         },
-        
+
         {
           title: 'Users',
           url: '/users',
           icon: IconUsers,
         },
         {
-            title: 'Demo',
-            url: '/demo',
-            icon: IconDeviceComputerCamera,
+          title: 'Demo',
+          url: '/demo',
+          icon: IconDeviceComputerCamera,
         },
       ],
     },
 
     {
       title: 'Admin',
-      items : [
+      items: [
         {
           title: 'ContentSource',
           url: '/content_source',
@@ -94,10 +93,10 @@ export const sidebarData: SidebarData = {
           title: 'Prompts',
           url: '/prompts',
           icon: IconPrompt,
-        }
-      ]
+        },
+      ],
     },
-    
+
     {
       title: 'Settings',
       items: [
@@ -132,7 +131,6 @@ export const sidebarData: SidebarData = {
             },
           ],
         },
-        
       ],
     },
   ],

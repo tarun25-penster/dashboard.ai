@@ -4,5 +4,3 @@ import prompts from '@/features/prompts'
 export const Route = createLazyFileRoute('/_authenticated/prompts/')({
   component: prompts,
 })
-
-
